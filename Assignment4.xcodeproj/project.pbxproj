@@ -16,6 +16,12 @@
 		3104A2702A86B4DD00F5D12D /* Assignment4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104A26F2A86B4DD00F5D12D /* Assignment4Tests.swift */; };
 		3104A27A2A86B4DD00F5D12D /* Assignment4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104A2792A86B4DD00F5D12D /* Assignment4UITests.swift */; };
 		3104A27C2A86B4DD00F5D12D /* Assignment4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104A27B2A86B4DD00F5D12D /* Assignment4UITestsLaunchTests.swift */; };
+		3104A2892A86C22800F5D12D /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104A2882A86C22800F5D12D /* CalendarCell.swift */; };
+		3104A28B2A86C47200F5D12D /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104A28A2A86C47200F5D12D /* CalendarHelper.swift */; };
+		31A4EAE52A894A75002B1F56 /* WeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4EAE42A894A75002B1F56 /* WeeklyViewController.swift */; };
+		31A4EAE72A894B70002B1F56 /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4EAE62A894B70002B1F56 /* EventEditViewController.swift */; };
+		31A4EAE92A894BED002B1F56 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4EAE82A894BED002B1F56 /* Event.swift */; };
+		31A4EAEB2A894DBA002B1F56 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4EAEA2A894DBA002B1F56 /* EventCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		3104A2752A86B4DD00F5D12D /* Assignment4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assignment4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3104A2792A86B4DD00F5D12D /* Assignment4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment4UITests.swift; sourceTree = "<group>"; };
 		3104A27B2A86B4DD00F5D12D /* Assignment4UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment4UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3104A2882A86C22800F5D12D /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		3104A28A2A86C47200F5D12D /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		31A4EAE42A894A75002B1F56 /* WeeklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyViewController.swift; sourceTree = "<group>"; };
+		31A4EAE62A894B70002B1F56 /* EventEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
+		31A4EAE82A894BED002B1F56 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		31A4EAEA2A894DBA002B1F56 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +115,15 @@
 				3104A25A2A86B4DC00F5D12D /* SceneDelegate.swift */,
 				3104A25C2A86B4DC00F5D12D /* ViewController.swift */,
 				3104A25E2A86B4DC00F5D12D /* Main.storyboard */,
+				3104A2882A86C22800F5D12D /* CalendarCell.swift */,
+				3104A28A2A86C47200F5D12D /* CalendarHelper.swift */,
 				3104A2612A86B4DD00F5D12D /* Assets.xcassets */,
 				3104A2632A86B4DD00F5D12D /* LaunchScreen.storyboard */,
 				3104A2662A86B4DD00F5D12D /* Info.plist */,
+				31A4EAE42A894A75002B1F56 /* WeeklyViewController.swift */,
+				31A4EAEA2A894DBA002B1F56 /* EventCell.swift */,
+				31A4EAE62A894B70002B1F56 /* EventEditViewController.swift */,
+				31A4EAE82A894BED002B1F56 /* Event.swift */,
 			);
 			path = Assignment4;
 			sourceTree = "<group>";
@@ -258,9 +276,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A4EAE92A894BED002B1F56 /* Event.swift in Sources */,
+				31A4EAEB2A894DBA002B1F56 /* EventCell.swift in Sources */,
+				3104A28B2A86C47200F5D12D /* CalendarHelper.swift in Sources */,
+				31A4EAE72A894B70002B1F56 /* EventEditViewController.swift in Sources */,
 				3104A25D2A86B4DC00F5D12D /* ViewController.swift in Sources */,
 				3104A2592A86B4DC00F5D12D /* AppDelegate.swift in Sources */,
+				31A4EAE52A894A75002B1F56 /* WeeklyViewController.swift in Sources */,
 				3104A25B2A86B4DC00F5D12D /* SceneDelegate.swift in Sources */,
+				3104A2892A86C22800F5D12D /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
