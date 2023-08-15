@@ -6,9 +6,69 @@
 //
 
 import UIKit
+import Foundation
+
+extension Date {
+    static func dateFromNageruFormat(string: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.date(from: string)
+    }
+}
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource
 {
+    
+    func fetchEvents() {
+        guard let url = URL(string: "https://date.nager.at/api/v3/PublicHolidays/2023/CA") else {
+            print("Invalid URL")
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+
+            if let data = data {
+                do {
+                    if let jsonArray = try JSONSerialization.jsonObject(with: data) as? [[String: Any]] {
+                        var updatedEventsList = [Event]()
+                        
+                        for holiday in jsonArray {
+                            if let name = holiday["localName"] as? String,
+                               let dateString = holiday["date"] as? String,
+                               let date = Date.dateFromNageruFormat(string: dateString) {
+                                
+                                let event = Event() // Instantiate an Event object
+                                event.id = 0 // Assign an appropriate ID
+                                event.name = name
+                                event.date = date
+                                
+                                updatedEventsList.append(event)
+                            }
+                        }
+                        
+                        // Update eventsList on the main thread
+                        DispatchQueue.main.async {
+                            eventsList = updatedEventsList
+                            self.collectionView.reloadData()
+                        }
+                    } else {
+                        print("Invalid JSON format")
+                    }
+                } catch {
+                    print("JSON parsing error: \(error)")
+                }
+            }
+        }
+        task.resume()
+    }
+
+
+
+    
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -16,12 +76,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var totalSquares = [String]()
     
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        fetchEvents()
         setCellsView()
         setMonthView()
     }
+
     
     func setCellsView()
     {
